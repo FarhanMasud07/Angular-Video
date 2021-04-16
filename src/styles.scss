@@ -1,0 +1,89 @@
+@import "~@angular/material/theming";
+@import "~src/assets/Theme/my-theme";
+@import "~src/assets/scss/font";
+@import "~src/assets/scss/padding";
+@import "~src/assets/scss/margin";
+@import "~src/assets/scss/color";
+
+$custom-typography: mat-typography-config(
+  $font-family: 'Roboto'
+);
+@include mat-core($custom-typography);
+
+
+.main {
+  min-height: calc(100vh);
+}
+
+.zero-margin {
+  margin: 0;
+}
+
+.zero-padding {
+  padding: 0;
+}
+
+.border-less-mat-button {
+  .mat-flat-button {
+    border-radius: 0;
+  }
+}
+
+.mat-flat-button.mat-primary, .mat-raised-button.mat-primary, .mat-fab.mat-primary, .mat-mini-fab.mat-primary {
+  color: #01579b;
+}
+
+
+.mat-slide-toggle-thumb {
+  height: 10px !important;
+  width: 10px !important;
+  margin-top: 4.3px !important;
+  margin-left: 2px;
+  background: #ffffff !important;
+  box-shadow: none !important;
+  border: 1px solid #605E5C !important;
+}
+
+.mat-slide-toggle.mat-checked .mat-slide-toggle-bar {
+  background-color: #ffe082 !important;
+  height: 15px;
+  width: 30px;
+}
+
+.mat-slide-toggle.mat-checked .mat-slide-toggle-thumb {
+  background-color: #FFFFFF !important;
+  height: 11px !important;
+  width: 11px !important;
+  margin-left: -.1px;
+  margin-top: 4px !important;
+  box-shadow: none !important;
+}
+
+.mat-slide-toggle-bar {
+  background-color: #ffffff !important;
+  border: 1px solid #605E5C !important;
+  height: 15px !important;
+  width: 30px !important;
+}
+
+.mat-form-field-underline {
+  background-color: map-get($mat-gray, 300) !important;
+}
+
+.mat-form-field-ripple {
+  background-color: map-get($mat-light-blue, 300) !important;
+  max-height: 0.2px !important;
+}
+
+.mat-form-field-label {
+  color: map-get($mat-gray, 500) !important;
+}
+
+.mat-focused .mat-form-field-label {
+  color: map-get($mat-gray, 400) !important;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+

@@ -1,0 +1,51 @@
+<main>
+  <section fxLayoutAlign="center center">
+
+    <div class="login"
+         ngClass.xs="login-width-xs"
+         ngClass.sm="login-width-sm"
+         ngClass.gt-sm="login-width-gt-sm"
+         ngClass.lg="login-width-lg"
+         ngClass.gt-lg="login-width-gt-lg">
+      <mat-progress-bar mode="indeterminate" *ngIf="loading"></mat-progress-bar>
+      <article class="padding-h-40">
+        <div
+          class="padding-top-76 padding-bottom-52 font-30 paragraph-color font-bold">
+          <p>Login</p>
+        </div>
+        <form [formGroup]="loginForm" class="login-form" (ngSubmit)="onSubmit()">
+
+          <!--Email-->
+          <mat-form-field class="login-form-full-width">
+            <span matPrefix><mat-icon>mail_outline</mat-icon> &nbsp;</span>
+            <input type="text" matInput placeholder="Email" formControlName="Email">
+            <mat-error *ngIf="hasError('Email', 'required')">Email is required</mat-error>
+            <mat-error *ngIf="hasError('Email', 'email')">Email is not valid</mat-error>
+          </mat-form-field>
+
+          <!--Password-->
+          <mat-form-field class="login-form-full-width">
+            <span matPrefix><mat-icon>lock_open</mat-icon> &nbsp;</span>
+            <input type="password" matInput placeholder="Password" formControlName="Password">
+            <mat-error *ngIf="hasError('Password', 'required')">Password is required</mat-error>
+          </mat-form-field>
+
+          <div class="border-less-mat-button padding-top-52"
+               fxLayout="column" fxLayoutGap="30px"
+               fxLayoutAlign="center center">
+            <button mat-flat-button class="cursor-pointer" type="submit"
+                    [disabled]="loading || loginForm.invalid">
+              Sign in
+            </button>
+            <div fxLayout="row" fxLayoutGap="8px">
+              <p class="dont-have-account-yet">Doesn't have an account yet?</p>
+              <span class="sign-up cursor-pointer"> Sign Up</span>
+            </div>
+          </div>
+
+        </form>
+
+      </article>
+    </div>
+  </section>
+</main>
